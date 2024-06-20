@@ -1,0 +1,41 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block body %}
+<div class="wrapper" style="background-image: url('https://i.pinimg.com/564x/c8/8d/08/c88d08a83ec89eaf913205c61891f881.jpg');">
+    <div class="inner">
+        <div class="image-holder">
+            <img src="{% static 'images/registration-form-1.jpg' %}" alt="">
+        </div>
+        {% if messages %}
+        {% for message in messages %}
+                <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'warning' %}alert-warning{% else %}alert-danger{% endif %}">
+                    {{ message }}
+                </div>
+        {% endfor %}
+        {% endif %}
+        <form action="{% url 'UserAuth:login' %}" method="POST">
+
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" class="form-control" >
+            </div>
+
+            <div class="form-wrapper">
+                <input type="password" name="password" placeholder="Password" class="form-control" >
+            </div>
+
+            <button type="submit"
+            data-text="regiter">Register
+                <i class="zmdi zmdi-arrow-right"></i>
+            </button>
+            <p class="text-center mt-3">Don't have an account? <a href="{% url 'UserAuth:signup' %}">Sign Up</a></p>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
