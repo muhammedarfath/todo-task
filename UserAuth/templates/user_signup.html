@@ -6,13 +6,13 @@
         <div class="image-holder">
             <img src="{% static 'images/registration-form-1.jpg' %}" alt="">
         </div>
-            {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
+        {% if messages %}
+        {% for message in messages %}
+                <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'warning' %}alert-warning{% else %}alert-danger{% endif %}">
                     {{ message }}
                 </div>
-            {% endfor %}
-            {% endif %}
+        {% endfor %}
+        {% endif %}
         <form action="{% url 'UserAuth:signup' %}" method="POST">
             {% csrf_token %}
             <div class="form-group">
@@ -23,7 +23,7 @@
                 <i class="zmdi zmdi-account"></i>
             </div>
             <div class="form-wrapper">
-                <input type="password" name="password" placeholder="Password" class="form-control" required>
+                <input type="password" name="password1" placeholder="Password" class="form-control" required>
                 <input type="password" name="password2" placeholder="Password" class="form-control" required>
             </div>
 

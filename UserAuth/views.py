@@ -25,7 +25,7 @@ class Signup(View):
                 return render(request,'user_login.html',{'user':form.cleaned_data['email']})            
             else:
                 messages.warning(request, form.errors)
-                return redirect('/UserAuth/user_signup/')
+                return redirect('/UserAuth/signup/')
             
 
 
