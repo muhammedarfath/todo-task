@@ -1,31 +1,30 @@
 # ToDo App
 
-using python djnago backend front html and css frontend 
+This project is a ToDo application built with Python (Django backend), HTML/CSS (frontend), and includes authentication functionality.
 
 ## Installation
 
-- Clone the repository: `git clone https://github.com/yourusername/your-project.git`
-- Navigate into the project directory: `cd your-project/`
-- Create a virtual environment (optional but recommended): `python -m venv env`
-- Activate the virtual environment:
-  - On Windows: `env\Scripts\activate`
-  - On macOS/Linux: `source env/bin/activate`
-- Install dependencies: `pip install -r requirements.txt`
-- Run migrations: `python manage.py migrate`
+- Clone the repository: 
+`git clone https://github.com/muhammedarfath/todo-task.git`
+
+- Navigate into the project directory: 
+`cd todo-task`
+
+
+- Install dependencies: 
+Ensure Python and pip are installed. Install required packages using pip:
+`pip install -r requirements.txt`
+
+- Run migrations: 
+Apply database migrations to set up the initial database schema:
+
+`python manage.py migrate`
 
 ## Usage
+Launch the Django development server:
 
-- Start the development server: `python manage.py runserver`
+- Start the development server:
+ `python manage.py runserver`
 - Access the project at http://localhost:8000/
 
-## Contributing
 
-Feel free to fork the repository, make changes, and submit pull requests.
-
-## Credits
-
-- Credit to any libraries or resources used in this project.
-
-## License
-
-This project is licensed under the [Your License Name] License - see the LICENSE file for details.
